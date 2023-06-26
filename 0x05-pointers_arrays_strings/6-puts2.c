@@ -11,8 +11,9 @@ void puts2(char *str)
 	/* Loop through the string, incrementing by 2 */
 	while (str[i] != '\0')
 	{
-		putchar(str[i]);
-		i += 2;
+		if (i % 2 == 0)
+			putchar(str[i]);
+		i++;
 	}
 
 	putchar('\n');
