@@ -21,9 +21,13 @@ char *cap_string(char *str)
 		{
 			capitalize_next = 1;
 		}
-		else if (capitalize_next && str[i] >= 'a' && str[i] <= 'z')
+		else if (capitalize_next && (str[i] >= 'a' && str[i] <= 'z'))
 		{
-			str[i] = str[i] - ('a' - 'A');
+			str[i] = str[i] - 'a' + 'A';
+			capitalize_next = 0;
+		}
+		else
+		{
 			capitalize_next = 0;
 		}
 
